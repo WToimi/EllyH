@@ -1,8 +1,9 @@
 <html>
     <head>
+      <link rel="icon" href="/img/icon.png">
         <link rel = "stylesheet" href="style.css" type ="text/css">
         <script src="jquery-3.1.1.js"></script>
-        <script src="Scripts/Main.js"></script>
+        <meta charset="utf-8">
       <!--  <link rel="stylesheet" href="/css/imageslider.css"> -->
 
         </script>
@@ -15,23 +16,47 @@
       <script> $( "#bas" ).load( "base.html" ); </script>
 <div class="LoginForm">
 
+<div id="contactform">
 
-<form id="contactform" action="index.html" method="post">
+
+<form id="form" action="index.html" method="post">
+  <p id="returnmessage"></p>
   Om du har några frågor eller är intresserad av att köpa min konst kan du kontakta mig på EllyHahne@Hotmail.com, eller använda kontaktformuläret nedan!
 <p>(Tekniskt fel! Formuläret fungerar inte som det ska, använd e-post!)</p>
-<p>E-post: * <br><input type="text" name="" value=""></p>
-<p>Namn: * <br><input type="text" name="" value=""></p>
-<p>Telefon:  <br><input type="text" name="" value=""></p>
-<p>Meddelande: * <br><textarea name="name" rows="8" cols="40"></textarea></p>
-
+<p>E-post: * <br><input type="text" id="email" value=""></p>
+<p>Namn: * <br><input type="text" id="name" value=""></p>
+<p>Telefon:  <br><input type="text" id="number" value=""></p>
+<p>Företag: <br><input type="text" id="foretag" value="">
+<p>Meddelande: * <br><textarea id="message" rows="8" cols="40"></textarea></p>
+<input type="button" id="submit" value="Skicka meddelande" style="margin:5px;padding:3px;">
 
 </form>
+</div>
 <!--<div id="picfix">
   <img src="img/_1.jpg" alt="" id="contactpic">
 </div>-->
 
 </div>
 
+</body>
 
-    </body>
+<script>
+    $(document).ready(function(){
+      var ute=0;
+            $("#mail").slideUp();
+
+        $(".btn2").click(function(){
+          if (ute==0) {
+    ute=1; $("#mail").slideDown();
+          }
+          else{
+            ute=0;
+              $("#mail").slideUp();
+          }
+
+
+        });
+    });
+</script>
+<script src="js/contact_form.js"></script>
 </html>
