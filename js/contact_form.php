@@ -18,7 +18,7 @@ if ($foretag!=null) {
 	$fortagsend= 'Företag:' . $foretag . '<br/>';
 }
 $headers = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
 $headers .= 'From:' . $email. "\r\n"; // Sender's Email
 $headers .= 'Cc:' . $email. "\r\n"; // Carbon copy to Sender
 $template = '<div style="padding:50px; color:white;">Hej ' . $name . ',<br/>'
@@ -34,9 +34,9 @@ $template = '<div style="padding:50px; color:white;">Hej ' . $name . ',<br/>'
 $sendmessage = "<div style=\"background-color:#7E7E7E; color:white;\">" . $template . "</div>";
 // Message lines should not exceed 70 characters (PHP rule), so wrap it.
 $sendmessage = wordwrap($sendmessage, 70);
-$mymail = 'wisa@etuna.ntig.se';
+
 // Send mail by PHP Mail Function.
-mail($mymail, $subject, $sendmessage, $headers);
+mail("wilhelmtoimi@gmail.com", "Elly Hahne Art", $sendmessage, $headers);
 echo "Ditt meddelande har mottagits, Vi kommer kontakta dig snarast.";
 }
 } else {
